@@ -2,7 +2,6 @@
   "name": "feed-me",
   "version": "0.1.0",
   "private": true,
-  "productName": "Electron Example",
   "main": "electron/main.js",
   "scripts": {
     "start": "npm run build && electron .",
