@@ -1,6 +1,5 @@
 <template>
   <div class="cardwrapper">
-    <h1>card wrapper!</h1>
     <div v-for="name in abce" :key="name">{{ name }}</div>
   </div>
 </template>
@@ -20,7 +19,6 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 90%;
-  border: 0.25rem solid;
+  height: 80%;
 }
 </style>

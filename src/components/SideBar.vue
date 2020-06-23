@@ -1,7 +1,5 @@
 <template>
-  <div class="sidebar">
-    <h1>sidebar!</h1>
-  </div>
+  <div class="sidebar"></div>
 </template>
 
 <script>
@@ -14,7 +12,8 @@ export default {
 <style scoped>
 .sidebar {
   display: flex;
+  flex-direction: column;
   flex: 1;
-  border: 0.25rem solid;
+  background: #97aabd;
 }
 </style>
