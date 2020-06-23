@@ -1,4 +1,4 @@
-# test-vue
+# feed-me
 
 ## Project setup
 ```
