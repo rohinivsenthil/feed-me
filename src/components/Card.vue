@@ -24,7 +24,7 @@ export default {
 .card {
   display: flex;
   width: 60%;
-  height: 10rem;
+  height: auto;
   margin: 0.5rem;
   margin-bottom: 2rem;
 }
