@@ -1,7 +1,7 @@
 <template>
   <div class="cardwrapper">
     <div v-for="name in abce" :key="name">
-      <Card v-bind:title="name" />
+      <Card :title="name" />
     </div>
   </div>
 </template>
@@ -27,7 +27,8 @@ export default {
   flex-direction: column;
   width: 100%;
   height: 80%;
-  padding-top: 5rem;
+  margin-left: 3rem;
+  padding-top: 2rem;
   padding-bottom: 2rem;
   overflow: scroll;
 }

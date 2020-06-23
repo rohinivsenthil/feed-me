@@ -22,6 +22,7 @@ export default {
   height: 20%;
   width: 100%;
   border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 1rem;
 }
 .feedme-title {
   font-size: 2rem;
@@ -34,6 +35,6 @@ export default {
   margin-left: 1rem;
   font-size: 1rem;
   font-weight: bolder;
-  color: #9e5a63;
+  color: #97aabd;
 }
 </style>

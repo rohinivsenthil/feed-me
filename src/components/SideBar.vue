@@ -14,6 +14,6 @@ export default {
   display: flex;
   flex-direction: column;
   flex: 1;
-  background: #97aabd;
+  background: #9e5a63;
 }
 </style>

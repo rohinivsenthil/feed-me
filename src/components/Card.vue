@@ -1,13 +1,21 @@
 <template>
   <div class="card">
-    <div>{{ title }}</div>
+    <div class="card-image">
+      <img src="@/assets/logo.png" style="height: auto; max-width: 100%;" />
+    </div>
+    <CardContent :title="title" />
   </div>
 </template>
 
 <script>
+import CardContent from "./CardContent.vue";
+
 export default {
   name: "Card",
-  props: ["title"]
+  props: ["title"],
+  components: {
+    CardContent
+  }
 };
 </script>
 
@@ -15,11 +23,16 @@ export default {
 <style scoped>
 .card {
   display: flex;
-  flex-direction: column;
-  width: 75%;
+  width: 60%;
   height: 10rem;
   margin: 0.5rem;
-  margin-left: 3rem;
-  border: 1px solid #e0e0e0;
+  margin-bottom: 2rem;
+}
+
+.card-image {
+  height: 10rem;
+  margin-right: 2rem;
+  width: 35%;
+  overflow: hidden;
 }
 </style>
