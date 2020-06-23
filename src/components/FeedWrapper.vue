@@ -22,6 +22,7 @@ export default {
 <style scoped>
 .feed {
   display: flex;
+  width: 100%;
   flex-direction: column;
   flex: 5;
 }

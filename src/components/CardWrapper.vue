@@ -1,14 +1,21 @@
 <template>
   <div class="cardwrapper">
-    <div v-for="name in abce" :key="name">{{ name }}</div>
+    <div v-for="name in abce" :key="name">
+      <Card v-bind:title="name" />
+    </div>
   </div>
 </template>
 
 <script>
+import Card from "./Card.vue";
+
 export default {
   name: "CardWrapper",
   data() {
-    return { abce: ["name1", "name2", "name3"] };
+    return { abce: ["name1", "name2", "name3", "name1", "name2", "name3"] };
+  },
+  components: {
+    Card
   }
 };
 </script>
@@ -20,5 +27,8 @@ export default {
   flex-direction: column;
   width: 100%;
   height: 80%;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  overflow: scroll;
 }
 </style>
