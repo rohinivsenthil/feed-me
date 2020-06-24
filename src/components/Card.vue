@@ -25,16 +25,19 @@ export default {
 <style scoped>
 .card {
   display: flex;
-  width: 60%;
+  width: 70%;
   height: auto;
   margin: 0.5rem;
   margin-bottom: 2rem;
+  padding: 1rem;
+  padding-top: 1.5rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .card-image {
   height: 10rem;
   margin-right: 2rem;
-  width: 35%;
+  width: 25%;
   overflow: hidden;
 }
 </style>

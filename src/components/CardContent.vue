@@ -30,24 +30,25 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
+  overflow: scroll;
+  width: 60%;
   height: 100%;
 }
 
 .card-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #314455;
 }
 
 .card-description {
   margin-top: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-align: left;
 }
 
 .card-date {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #bdbdbd;
 }
 </style>

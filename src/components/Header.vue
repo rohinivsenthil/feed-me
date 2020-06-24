@@ -1,15 +1,20 @@
 <template>
   <div class="header">
-    <div class="feedme-title">Feed Me: RSS feed reader</div>
+    <div class="feedme-title">
+      <img src="@/assets/download.png" height="25" width="25" />
+      Feed Me: RSS feed reader
+    </div>
     <div
       class="feedme-subtitle"
     >Subscribe to your favorite sites to create a personalized feed with its latest updates</div>
+    <el-button>Click me</el-button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  components: {}
 };
 </script>
 
