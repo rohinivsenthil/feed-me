@@ -1,9 +1,9 @@
 <template>
   <div class="card">
-    <div class="card-image">
-      <img src="@/assets/logo.png" style="height: auto; max-width: 100%;" />
-    </div>
     <CardContent :content="content" />
+    <div class="card-action">
+      <el-button icon="el-icon-collection-tag" size="mini" title="Mark as read" circle></el-button>
+    </div>
   </div>
 </template>
 
@@ -24,6 +24,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .card {
+  background: #fafafa;
   display: flex;
   width: 70%;
   height: auto;
@@ -31,13 +32,18 @@ export default {
   margin-bottom: 2rem;
   padding: 1rem;
   padding-top: 1.5rem;
+  padding-left: 2rem;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-.card-image {
-  height: 10rem;
-  margin-right: 2rem;
-  width: 25%;
-  overflow: hidden;
+.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-action {
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+  width: 15%;
 }
 </style>

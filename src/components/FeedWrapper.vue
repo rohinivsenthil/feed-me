@@ -8,12 +8,20 @@
 <script>
 import CardWrapper from "./CardWrapper.vue";
 import Header from "./Header.vue";
-
 export default {
   name: "FeedWrapper",
+  data() {
+    return {};
+  },
   components: {
     CardWrapper,
     Header
+  },
+  mounted() {
+    this.$store.dispatch(
+      "getRSS",
+      "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+    );
   }
 };
 </script>

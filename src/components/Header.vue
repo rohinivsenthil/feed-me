@@ -7,14 +7,30 @@
     <div
       class="feedme-subtitle"
     >Subscribe to your favorite sites to create a personalized feed with its latest updates</div>
-    <el-button>Click me</el-button>
+    <el-button v-on:click="getFeed">Click me</el-button>
   </div>
 </template>
 
 <script>
 export default {
   name: "Header",
-  components: {}
+  data() {
+    return {
+      response: null
+    };
+  },
+  props: {
+    value: Array
+  },
+  components: {},
+  methods: {
+    getFeed() {
+      this.$store.dispatch(
+        "getRSS",
+        "http://feeds.bbci.co.uk/news/world/rss.xml"
+      );
+    }
+  }
 };
 </script>
 
@@ -26,18 +42,17 @@ export default {
   align-items: flex-start;
   height: 20%;
   width: 100%;
+  padding-left: 1.5rem;
   border-bottom: 1px solid #e0e0e0;
   padding-bottom: 1rem;
 }
 .feedme-title {
   font-size: 2rem;
   font-weight: bolder;
-  margin-left: 1rem;
   margin-top: 3rem;
   color: #314455;
 }
 .feedme-subtitle {
-  margin-left: 1rem;
   font-size: 1rem;
   font-weight: bolder;
   color: #97aabd;

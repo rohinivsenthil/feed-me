@@ -8,27 +8,20 @@
 
 <script>
 import Card from "./Card.vue";
-let Parser = require("rss-parser");
-let parser = new Parser();
 
 export default {
   name: "CardWrapper",
   data() {
-    return {
-      abce: ["name1", "name2", "name3", "name1", "name2", "name3"],
-      response: null,
-      feed: []
-    };
+    return {};
+  },
+  props: {},
+  computed: {
+    feed() {
+      return this.$store.state.feed;
+    }
   },
   components: {
     Card
-  },
-  async mounted() {
-    this.response = await parser.parseURL(
-      "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
-    );
-    this.feed = [...this.feed, ...this.response.items];
-    console.log(this.feed);
   }
 };
 </script>

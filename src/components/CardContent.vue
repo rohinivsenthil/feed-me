@@ -31,7 +31,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   overflow: scroll;
-  width: 60%;
+  width: 85%;
   height: 100%;
 }
 
