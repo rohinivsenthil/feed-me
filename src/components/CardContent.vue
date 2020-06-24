@@ -1,17 +1,26 @@
 <template>
   <div class="cardcontent">
-    <div class="card-title">This is the card title {{title}}</div>
-    <div class="card-date">🕐 Thu, 12 Nov 2015</div>
-    <div
-      class="card-description"
-    >This is the card description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+    <a :href="content.link" style="text-decoration: none">
+      <div class="card-title">{{content.title}}</div>
+    </a>
+    <div class="card-date">🕐{{format(content.isoDate)}}</div>
+    <div class="card-description">{{content.contentSnippet}}</div>
   </div>
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
   name: "CardContent",
-  props: ["title"]
+  props: {
+    content: Object
+  },
+  methods: {
+    format(time) {
+      return moment(time).format("DD MMM YYYY, h:mm A");
+    }
+  }
 };
 </script>
 

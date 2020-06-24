@@ -3,7 +3,7 @@
     <div class="card-image">
       <img src="@/assets/logo.png" style="height: auto; max-width: 100%;" />
     </div>
-    <CardContent :title="title" />
+    <CardContent :content="content" />
   </div>
 </template>
 
@@ -12,7 +12,9 @@ import CardContent from "./CardContent.vue";
 
 export default {
   name: "Card",
-  props: ["title"],
+  props: {
+    content: Object
+  },
   components: {
     CardContent
   }
