@@ -18,10 +18,10 @@ export default {
     Header
   },
   mounted() {
-    this.$store.dispatch(
-      "getRSS",
-      "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
-    );
+    // this.$store.dispatch(
+    //   "getRSS",
+    //   "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+    // );
   }
 };
 </script>

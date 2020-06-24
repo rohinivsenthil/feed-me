@@ -11,14 +11,16 @@ export default new Vuex.Store({
   },
   mutations: {
     addToFeed(state, items) {
-      state.feed = [...items, ...state.feed]
-    }
+      state.feed = [...items, ...state.feed].sort((item1, item2) => Date.parse(item2.isoDate) - Date.parse(item1.isoDate));
+
+    },
   },
   actions: {
     async getRSS({ commit }, link) {
       const response = await parser.parseURL(link);
       commit("addToFeed", response.items);
-    }
+    },
+
   },
   modules: {
   }
