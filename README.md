@@ -1,4 +1,10 @@
-# feed-me
+<h1 align="center">Feed Me</h1>
+
+<div align="center">
+  <strong>📖 A simple RSS feed reader 📖</strong>
+</div>
+
+_______________________________________________________
 
 ## Project setup
 ```
