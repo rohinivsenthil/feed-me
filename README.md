@@ -2,28 +2,25 @@
 
 <div align="center">
   <strong>📖 A simple RSS feed reader 📖</strong>
+  <br />
+  (Vue learning project)
 </div>
 
 _______________________________________________________
 
-## Project setup
+### Installing dependencies
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Running the appliction (browser)
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Running the application (electron)
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm start
 ```
 
 ### Customize configuration
