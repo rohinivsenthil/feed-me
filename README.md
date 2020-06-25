@@ -1,23 +1,26 @@
-# feed-me
+<h1 align="center">Feed Me</h1>
 
-## Project setup
+<div align="center">
+  <strong>📖 A simple RSS feed reader 📖</strong>
+  <br />
+  (Vue learning project)
+</div>
+
+_______________________________________________________
+
+### Installing dependencies
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Running the appliction (browser)
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Running the application (electron)
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm start
 ```
 
 ### Customize configuration
