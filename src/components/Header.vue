@@ -32,6 +32,20 @@
       >
         <img src="@/assets/slashdot.png" height="25" width="25" />
       </el-button>
+      <div class="feed-dropdown">
+        <el-dropdown @command="changeView">
+          <span class="el-dropdown-link">
+            Feed View: {{view}}
+            <i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+          <el-dropdown-menu slot="dropdown" class="dropdown-items">
+            <el-dropdown-item command="Unread">Unread</el-dropdown-item>
+            <el-dropdown-item command="Bookmarked">Bookmarked</el-dropdown-item>
+            <el-dropdown-item command="Read">Read</el-dropdown-item>
+            <el-dropdown-item command="All">All</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div>
     </div>
   </div>
 </template>
@@ -41,7 +55,7 @@ export default {
   name: "Header",
   data() {
     return {
-      response: null
+      view: "Unread"
     };
   },
   props: {
@@ -51,6 +65,9 @@ export default {
   methods: {
     getFeed(link) {
       this.$store.dispatch("getRSS", link);
+    },
+    changeView(updatedView) {
+      this.view = updatedView;
     }
   }
 };
@@ -81,6 +98,19 @@ export default {
 }
 
 .feedme-actions {
+  display: flex;
+  width: 100%;
+  align-items: center;
   margin-top: 0.5rem;
+}
+
+.feed-dropdown {
+  margin-left: 3rem;
+  font-weight: bold;
+  color: #314455;
+}
+
+.dropdown-items {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 </style>

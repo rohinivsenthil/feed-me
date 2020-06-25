@@ -2,7 +2,8 @@
   <div class="card">
     <CardContent :content="content" />
     <div class="card-action">
-      <el-button icon="el-icon-collection-tag" size="mini" title="Mark as read" circle></el-button>
+      <el-button icon="el-icon-collection-tag" size="mini" title="Bookmark" circle></el-button>
+      <el-button icon="el-icon-check" size="mini" title="Mark as read" circle></el-button>
     </div>
   </div>
 </template>
