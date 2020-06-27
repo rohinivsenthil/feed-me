@@ -9,7 +9,7 @@
     >Subscribe to your favorite sites to create a personalized feed with its latest updates</div>
     <div class="feedme-actions">
       <HeaderQuickAdd />
-      <div class="feed-dropdown">
+      <div class="feedme-dropdown">
         <el-dropdown @command="changeView">
           <span class="el-dropdown-link">
             Feed View: {{view}}
@@ -33,28 +33,13 @@ export default {
   name: "Header",
   data() {
     return {
-      view: "Unread",
-      disabled: {
-        nytimes: false,
-        espn: false,
-        slashdot: false
-      }
+      view: "Unread"
     };
-  },
-  props: {
-    value: Array
   },
   components: {
     HeaderQuickAdd
   },
   methods: {
-    getFeed(link, name) {
-      this.$store.commit("addToSubscribed", link);
-      this.$store.dispatch("getRSS", link);
-      if (name !== undefined) {
-        this.disabled[name] = true;
-      }
-    },
     changeView(updatedView) {
       this.view = updatedView;
     }
@@ -77,7 +62,7 @@ export default {
 .feedme-title {
   font-size: 2rem;
   font-weight: bolder;
-  margin-top: 3rem;
+  margin-top: 2rem;
   color: #314455;
 }
 .feedme-subtitle {
@@ -93,8 +78,8 @@ export default {
   margin-top: 0.5rem;
 }
 
-.feed-dropdown {
-  margin-left: 3rem;
+.feedme-dropdown {
+  margin-left: 2rem;
   font-weight: bold;
   color: #314455;
 }

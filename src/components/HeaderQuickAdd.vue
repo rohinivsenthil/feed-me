@@ -9,7 +9,7 @@
       v-on:click="getFeed('https://rss.nytimes.com/services/xml/rss/nyt/World.xml', 'nytimes')"
       circle
       size="mini"
-      :disabled="disabled.nytimes"
+      :disabled="isSubscribed('https://rss.nytimes.com/services/xml/rss/nyt/World.xml')"
     >
       <img src="@/assets/nytimes.png" height="25" width="25" />
     </el-button>
@@ -18,7 +18,7 @@
       circle
       size="mini"
       title="ESPN"
-      :disabled="disabled.espn"
+      :disabled="isSubscribed('https://www.espn.com/espn/rss/nba/news')"
     >
       <img src="@/assets/espn.png" height="25" width="25" />
     </el-button>
@@ -27,7 +27,7 @@
       v-on:click="getFeed('http://rss.slashdot.org/slashdot/slashdotMain?format=xml', 'slashdot')"
       circle
       size="mini"
-      :disabled="disabled.slashdot"
+      :disabled="isSubscribed('http://rss.slashdot.org/slashdot/slashdotMain?format=xml')"
     >
       <img src="@/assets/slashdot.png" height="25" width="25" />
     </el-button>
@@ -39,21 +39,16 @@ export default {
   name: "Header",
   data() {
     return {
-      view: "Unread",
-      disabled: {
-        nytimes: false,
-        espn: false,
-        slashdot: false
-      }
+      view: "Unread"
     };
   },
   methods: {
-    getFeed(link, name) {
-      this.$store.commit("addToSubscribed", link);
-      this.$store.dispatch("getRSS", link);
-      if (name !== undefined) {
-        this.disabled[name] = true;
-      }
+    getFeed(site) {
+      this.$store.commit("addToSubscribed", site);
+      this.$store.dispatch("getRSS", site);
+    },
+    isSubscribed(site) {
+      return this.$store.state.subscribed.includes(site);
     }
   }
 };

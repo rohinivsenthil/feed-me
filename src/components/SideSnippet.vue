@@ -1,7 +1,13 @@
 <template>
   <div class="sidesnippet">
     <div class="link">{{shortenSite(site)}}</div>
-    <el-button icon="el-icon-close" size="mini" title="Unsubscribe" circle></el-button>
+    <el-button
+      v-on:click="removeSubscription(site)"
+      icon="el-icon-close"
+      size="mini"
+      title="Unsubscribe"
+      circle
+    ></el-button>
   </div>
 </template>
 
@@ -14,6 +20,10 @@ export default {
   methods: {
     shortenSite(site) {
       return site.slice(0, 25) + "...";
+    },
+    removeSubscription(site) {
+      this.$store.commit("removeFromSubscribed", site);
+      this.$store.commit("removeFromFeed", site);
     }
   }
 };
