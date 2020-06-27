@@ -1,13 +1,21 @@
 <template>
   <div class="sidesnippet">
-    <div class="link">www.thenytimes.com</div>
+    <div class="link">{{shortenSite(site)}}</div>
     <el-button icon="el-icon-close" size="mini" title="Unsubscribe" circle></el-button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "SideSnippet"
+  name: "SideSnippet",
+  props: {
+    site: String
+  },
+  methods: {
+    shortenSite(site) {
+      return site.slice(0, 25) + "...";
+    }
+  }
 };
 </script>
 
@@ -18,8 +26,10 @@ export default {
   justify-content: space-between;
   width: 85%;
   padding: 0.2rem;
+  margin-left: 0.5rem;
   margin-bottom: 0.5rem;
   padding-left: 1rem;
+  padding-right: 0.5rem;
   border-radius: 0.5rem;
   background-color: rgba(255, 255, 255, 0.2);
 }
@@ -31,7 +41,6 @@ export default {
 .el-button {
   border: none;
   color: #744248;
-  margin-right: 0.5rem;
   background: none;
 }
 

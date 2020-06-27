@@ -2,9 +2,9 @@
   <div class="sidebar">
     <div class="sidebar-title">SUBSCRIBED SITES</div>
     <div class="sidebar-snippets">
-      <SideSnippet />
-      <SideSnippet />
-      <SideSnippet />
+      <div v-for="(item,idx) in subscribed" :key="idx">
+        <SideSnippet :site="item" />
+      </div>
     </div>
   </div>
 </template>
@@ -15,6 +15,11 @@ export default {
   name: "SideBar",
   components: {
     SideSnippet
+  },
+  computed: {
+    subscribed() {
+      return this.$store.state.subscribed;
+    }
   }
 };
 </script>
@@ -43,7 +48,7 @@ export default {
 .sidebar-snippets {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 2rem;
   width: 100%;
 }

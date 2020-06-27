@@ -64,6 +64,7 @@ export default {
   components: {},
   methods: {
     getFeed(link) {
+      this.$store.commit("addToSubscribed", link);
       this.$store.dispatch("getRSS", link);
     },
     changeView(updatedView) {
