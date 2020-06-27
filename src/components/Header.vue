@@ -8,30 +8,7 @@
       class="feedme-subtitle"
     >Subscribe to your favorite sites to create a personalized feed with its latest updates</div>
     <div class="feedme-actions">
-      <el-button
-        title="NY Times"
-        v-on:click="getFeed('https://rss.nytimes.com/services/xml/rss/nyt/World.xml')"
-        circle
-        size="mini"
-      >
-        <img src="@/assets/nytimes.png" height="25" width="25" />
-      </el-button>
-      <el-button
-        v-on:click="getFeed('https://www.espn.com/espn/rss/nba/news')"
-        circle
-        size="mini"
-        title="ESPN"
-      >
-        <img src="@/assets/espn.png" height="25" width="25" />
-      </el-button>
-      <el-button
-        title="Slashdot"
-        v-on:click="getFeed('http://rss.slashdot.org/slashdot/slashdotMain?format=xml')"
-        circle
-        size="mini"
-      >
-        <img src="@/assets/slashdot.png" height="25" width="25" />
-      </el-button>
+      <HeaderQuickAdd />
       <div class="feed-dropdown">
         <el-dropdown @command="changeView">
           <span class="el-dropdown-link">
@@ -51,21 +28,32 @@
 </template>
 
 <script>
+import HeaderQuickAdd from "./HeaderQuickAdd.vue";
 export default {
   name: "Header",
   data() {
     return {
-      view: "Unread"
+      view: "Unread",
+      disabled: {
+        nytimes: false,
+        espn: false,
+        slashdot: false
+      }
     };
   },
   props: {
     value: Array
   },
-  components: {},
+  components: {
+    HeaderQuickAdd
+  },
   methods: {
-    getFeed(link) {
+    getFeed(link, name) {
       this.$store.commit("addToSubscribed", link);
       this.$store.dispatch("getRSS", link);
+      if (name !== undefined) {
+        this.disabled[name] = true;
+      }
     },
     changeView(updatedView) {
       this.view = updatedView;
@@ -110,7 +98,6 @@ export default {
   font-weight: bold;
   color: #314455;
 }
-
 .dropdown-items {
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
