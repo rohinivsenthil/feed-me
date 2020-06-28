@@ -1,4 +1,5 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, shell } = require('electron')
+
 
 function createWindow() {
   // Create the browser window.
@@ -15,6 +16,12 @@ function createWindow() {
 
   // Open the DevTools.
   win.webContents.openDevTools()
+
+  win.webContents.on('new-window', function (event, url) {
+    event.preventDefault();
+    shell.openExternal(url)
+
+  });
 }
 
 // This method will be called when Electron has finished

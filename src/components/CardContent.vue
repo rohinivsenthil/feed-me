@@ -1,6 +1,6 @@
 <template>
   <div class="cardcontent">
-    <a :href="content.link" style="text-decoration: none">
+    <a :href="content.link" style="text-decoration: none" target="_blank">
       <div class="card-title">{{content.title}}</div>
     </a>
     <div class="card-date">🕐{{format(content.isoDate)}}</div>

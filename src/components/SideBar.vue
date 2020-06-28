@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <div class="sidebar-title">SUBSCRIBED SITES</div>
+    <div class="sidebar-title">SUBSCRIBED SITES ({{subscribed.length}})</div>
     <div class="sidebar-snippets">
       <div v-for="(item,idx) in subscribed" :key="idx">
         <SideSnippet :site="item" />
