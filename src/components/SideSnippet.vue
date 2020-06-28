@@ -41,6 +41,7 @@ export default {
   padding-left: 1rem;
   padding-right: 0.5rem;
   border-radius: 0.5rem;
+  color: whitesmoke;
   background-color: rgba(255, 255, 255, 0.2);
 }
 

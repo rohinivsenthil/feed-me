@@ -6,6 +6,10 @@
         <SideSnippet :site="item" />
       </div>
     </div>
+    <el-button>
+      <i class="el-icon-plus"></i>
+      SUBSCRIBE
+    </el-button>
   </div>
 </template>
 
@@ -47,9 +51,23 @@ export default {
 
 .sidebar-snippets {
   display: flex;
+  height: 80%;
   flex-direction: column;
   align-items: flex-start;
   margin-top: 2rem;
   width: 100%;
+}
+
+.el-button {
+  min-width: 10rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  border: none;
+  color: #fafafa;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.el-icon-plus {
+  margin-right: 0.5rem;
 }
 </style>
