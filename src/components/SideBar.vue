@@ -59,12 +59,14 @@ export default {
 }
 
 .el-button {
-  min-width: 10rem;
+  min-width: 12rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
   border: none;
   color: #fafafa;
-  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid #fafafa;
+  background: none;
+  /* background-color: rgba(255, 255, 255, 0.2); */
 }
 
 .el-icon-plus {
