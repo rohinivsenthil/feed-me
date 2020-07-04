@@ -6,7 +6,7 @@
     </div>
     <el-button
       title="NY Times"
-      v-on:click="getFeed('https://rss.nytimes.com/services/xml/rss/nyt/World.xml', 'nytimes')"
+      v-on:click="getFeed('https://rss.nytimes.com/services/xml/rss/nyt/World.xml')"
       circle
       size="mini"
       :disabled="isSubscribed('https://rss.nytimes.com/services/xml/rss/nyt/World.xml')"
@@ -14,7 +14,7 @@
       <img src="@/assets/nytimes.png" height="25" width="25" />
     </el-button>
     <el-button
-      v-on:click="getFeed('https://www.espn.com/espn/rss/nba/news', 'espn')"
+      v-on:click="getFeed('https://www.espn.com/espn/rss/nba/news')"
       circle
       size="mini"
       title="ESPN"
@@ -24,7 +24,7 @@
     </el-button>
     <el-button
       title="Slashdot"
-      v-on:click="getFeed('http://rss.slashdot.org/slashdot/slashdotMain?format=xml', 'slashdot')"
+      v-on:click="getFeed('http://rss.slashdot.org/slashdot/slashdotMain?format=xml')"
       circle
       size="mini"
       :disabled="isSubscribed('http://rss.slashdot.org/slashdot/slashdotMain?format=xml')"
